@@ -9,7 +9,7 @@ else
           "--noheading",
           "--column",
           "--smart-case",
-          "silent",
+          "--silent",
           "--vimgrep",
         },
       },
