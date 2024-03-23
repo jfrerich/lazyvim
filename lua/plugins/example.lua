@@ -72,6 +72,7 @@ return {
       servers = {
         -- pyright will be automatically installed with mason and loaded with lspconfig
         pyright = {},
+        perlnavigator = {},
       },
     },
   },
@@ -127,6 +128,7 @@ return {
         "lua",
         "markdown",
         "markdown_inline",
+        "perl",
         "python",
         "query",
         "regex",
