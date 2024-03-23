@@ -1,8 +1,10 @@
 if vim.fn.executable("rg") == 1 then
   -- using rg
+  return {}
 else
   if vim.fn.executable("ag") == 1 then
-    require("telescope").setup({
+    return {
+      "telescope",
       defaults = {
         vimgrep_arguments = {
           "ag",
@@ -13,6 +15,6 @@ else
           "--vimgrep",
         },
       },
-    })
+    }
   end
 end
