@@ -11,18 +11,20 @@ map("n", "<leader>v", "<cmd>vsplit<CR>")
 -- show buffers
 map("n", ";", "<cmd> Telescope buffers <CR>")
 
-local builtin = require("telescope.builtin")
-function fuzzyFindFiles()
-  builtin.grep_string({
-    path_display = { "smart" },
-    only_sort_text = true,
-    word_match = "-w",
-    search = "",
-  })
+for _, mode in pairs({ "i", "v", "n" }) do
+  vim.keymap.del(mode, "<A-j>")
 end
-
-vim.keymap.set("n", "<leader>/", "<cmd>lua fuzzyFindFiles()<CR>")
+-- local builtin = require("telescope.builtin")
+-- function fuzzyFindFiles()
+--   builtin.grep_string({
+--     path_display = { "smart" },
+--     only_sort_text = true,
+--     word_match = "-w",
+--     search = "",
+--   })
+-- end
+--
+-- vim.keymap.set("n", "<leader>/", "<cmd>lua fuzzyFindFiles()<CR>")
 
 -- map("n", "<leader>rg", live_grep_args_shortcuts.grep_word_under_cursor)
 -- local live_grep_args_shortcuts = require("telescope-live-grep-args.shortcuts")
--- map("n", "<leader>gc", live_grep_args_shortcuts.grep_word_under_cursor)
