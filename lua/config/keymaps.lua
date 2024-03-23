@@ -11,7 +11,7 @@ map("n", "<leader>v", "<cmd>vsplit<CR>")
 -- show buffers
 map("n", ";", "<cmd> Telescope buffers <CR>")
 
-local telescope, builtin = require("telescope"), require("telescope.builtin")
+local builtin = require("telescope.builtin")
 function fuzzyFindFiles()
   builtin.grep_string({
     path_display = { "smart" },
