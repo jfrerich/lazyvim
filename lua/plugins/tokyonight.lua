@@ -1,4 +1,9 @@
-require("tokyonight").setup({
-  dim_inactive = true,
-  lualine_bold = true,
-})
+return {
+  {
+    "folke/tokyonight.nvim",
+    opts = {
+      dim_inactive = true,
+      lualine_bold = true,
+    },
+  },
+}

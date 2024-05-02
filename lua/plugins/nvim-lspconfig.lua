@@ -9,6 +9,15 @@ require("lspconfig").perlpls.setup({})
 --   },
 -- }
 
+return {
+  "neovim/nvim-lspconfig",
+  opts = {
+    servers = {
+      perlnavigator = {},
+    },
+  },
+}
+
 -- add pyright to lspconfig
 -- {
 --   "neovim/nvim-lspconfig",
