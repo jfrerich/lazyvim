@@ -1,5 +1,4 @@
-return {
-  "telescope.nvim",
+require("telescope").setup({
   dependencies = {
     "nvim-telescope/telescope-fzf-native.nvim",
     build = "make",
@@ -7,7 +6,23 @@ return {
       require("telescope").load_extension("fzf")
     end,
   },
-}
+  pickers = {
+    buffers = {
+      ignore_current_buffer = true,
+    },
+  },
+})
+
+-- return {
+--   "telescope.nvim",
+--   dependencies = {
+--     "nvim-telescope/telescope-fzf-native.nvim",
+--     build = "make",
+--     config = function()
+--       require("telescope").load_extension("fzf")
+--     end,
+--   },
+-- }
 
 -- if vim.fn.executable("rg") == 1 then
 --   return {
