@@ -1,4 +1,5 @@
-require("telescope").setup({
+return {
+  "telescope.nvim",
   dependencies = {
     "nvim-telescope/telescope-fzf-native.nvim",
     build = "make",
@@ -6,12 +7,14 @@ require("telescope").setup({
       require("telescope").load_extension("fzf")
     end,
   },
-  pickers = {
-    buffers = {
-      ignore_current_buffer = true,
+  opts = {
+    pickers = {
+      buffers = {
+        ignore_current_buffer = true,
+      },
     },
   },
-})
+}
 
 -- return {
 --   "telescope.nvim",
