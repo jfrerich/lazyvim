@@ -13,7 +13,7 @@ return {
               perlPath = "perl",
               enableWarnings = true,
               -- perltidyProfile = "",
-              -- perlcriticProfile = "",
+              perlcriticProfile = "$workspaceFolder/.perlcriticrc",
               perlcriticEnabled = true,
               perlimportsLintEnabled = true,
               perlimportsTidyEnabled = true,
