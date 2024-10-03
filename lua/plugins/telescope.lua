@@ -7,6 +7,18 @@ return {
       require("telescope").load_extension("fzf")
     end,
   },
+  defaults = {
+    mappings = {
+      i = {
+        -- Stay in current buffer on <CR> (insert mode)
+        ["<CR>"] = require("telescope.actions").select_default + require("telescope.actions").center,
+      },
+      n = {
+        -- Stay in current buffer on <CR> (normal mode)
+        ["<CR>"] = require("telescope.actions").select_default + require("telescope.actions").center,
+      },
+    },
+  },
   opts = {
     pickers = {
       buffers = {
