@@ -9,7 +9,7 @@ map("n", "<leader>h", "<cmd>split<CR>")
 map("n", "<leader>v", "<cmd>vsplit<CR>")
 
 -- show buffers
-map("n", ";", "<cmd> Telescope buffers <CR>")
+map("n", ";", "<Cmd>FzfLua buffers sort_mru=true sort_lastused=true<CR>")
 
 for _, mode in pairs({ "i", "v", "n" }) do
   vim.keymap.del(mode, "<A-j>")
