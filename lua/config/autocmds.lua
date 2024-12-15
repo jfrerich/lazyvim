@@ -7,3 +7,10 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
     vim.opt.filetype = "skill"
   end,
 })
+-- Create an autocmd to run isort on saving Python files
+vim.api.nvim_create_autocmd("BufWritePost", {
+  pattern = "*.py",
+  callback = function()
+    vim.cmd("silent !isort %")
+  end,
+})
