@@ -11,6 +11,12 @@ map("n", "<leader>v", "<cmd>vsplit<CR>")
 -- show buffers
 map("n", ";", "<Cmd>FzfLua buffers sort_mru=true sort_lastused=true<CR>")
 
+map("t", "<Esc>", "<C-\\><C-n>")
+map("t", "<A-h", "<C-\\><C-N><C-w>h")
+map("t", "<A-j", "<C-\\><C-N><C-w>j")
+map("t", "<A-k", "<C-\\><C-N><C-w>k")
+map("t", "<A-l", "<C-\\><C-N><C-w>l")
+
 for _, mode in pairs({ "i", "v", "n" }) do
   vim.keymap.del(mode, "<A-j>")
 end
