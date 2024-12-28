@@ -5,10 +5,10 @@ return {
     "williamboman/mason.nvim",
     opts = function(_, opts)
       vim.list_extend(opts.ensure_installed, {
-        "pyright",
-        "black",
-        -- "ruff",
-        "mypy",
+        "pyright", -- static type checker
+        "black", -- formatter
+        "ruff", -- linter and formatter
+        -- "mypy",
       })
     end,
   },
@@ -89,14 +89,14 @@ return {
         --     end
         --   end)
         -- end,
-        pyright = function()
-          require("lazyvim.util").lsp.on_attach(function(client, _)
-            if client.name == "pyright" then
-              -- disable hover in favor of jedi-language-server
-              -- client.server_capabilities.hoverProvider = false
-            end
-          end)
-        end,
+        -- pyright = function()
+        --   require("lazyvim.util").lsp.on_attach(function(client, _)
+        --     if client.name == "pyright" then
+        --       -- disable hover in favor of jedi-language-server
+        --       -- client.server_capabilities.hoverProvider = false
+        --     end
+        --   end)
+        -- end,
       },
     },
   },
@@ -107,27 +107,13 @@ return {
     optional = true,
     opts = {
       formatters_by_ft = {
-        ["python"] = { { "black" } },
+        ["python"] = {
+          "black",
+        },
       },
+      stop_after_first = true, -- Ensures only the first formatter runs
     },
   },
-
-  -- Setup null-ls with `black`
-  -- {
-  --   "nvimtools/none-ls.nvim",
-  --   opts = function(_, opts)
-  --     local nls = require("null-ls")
-  --     opts.sources = vim.list_extend(opts.sources, {
-  --       -- Order of formatters matters. They are used in order of appearance.
-  --       nls.builtins.formatting.ruff,
-  --       nls.builtins.formatting.black,
-  --       -- nls.builtins.formatting.black.with({
-  --       --   extra_args = { "--preview" },
-  --       -- }),
-  --       -- nls.builtins.diagnostics.ruff,
-  --     })
-  --   end,
-  -- },
 
   -- For selecting virtual envs
   {
