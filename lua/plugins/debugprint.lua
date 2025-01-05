@@ -1,6 +1,32 @@
+local my_fileformat = {
+  left = 'print "',
+  left_var = 'print "', -- `left_var` is optional, for 'variable' lines only; `left` will be used if it's not present
+  right = '"',
+  mid_var = "${",
+  right_var = '}"',
+}
 return {
   "andrewferrier/debugprint.nvim",
-
+  config = function()
+    require("debugprint").setup({
+      filetypes = {
+        skill = {
+          left = 'println("',
+          left_var = 'println("',
+          mid_var = '" + ',
+          right_var = ")",
+          right = '")',
+        },
+        -- skill = {
+        --   left = 'println("',
+        --   left_var = 'println("',
+        --   mid_var = " .. ",
+        --   right_var = ' .. ")',
+        --   right = '")',
+        -- },
+      },
+    })
+  end,
   opts = {
     keymaps = {
       normal = {
