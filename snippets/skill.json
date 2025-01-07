@@ -1,27 +1,49 @@
 {
   "println": {
-    "prefix": "println",
+    "prefix": [
+      "pln",
+      "println"
+    ],
     "description": "println(variable)\nprintln(\"string\")\nprintln(\"multi line \\ \n string\")",
-    "body": [ "println(${1:text_or_var})" ]
+    "body": [
+      "println(${1:text_or_var})"
+    ]
   },
   "printf": {
-    "prefix": "printf",
-    "description": "printf(\"%s\" variable)",
-    "body": [ "printf(\"${1:%s}\" ${2:variable})" ]
+    "prefix": [
+      "pf",
+      "printf"
+    ],
+    "description": "```lisp\nprintf f(x):\nprintf(\"$1\" $2)\n```",
+    "body": [
+      "printf(\"${1:%s}\" ${2:variable})"
+    ]
   },
   "pprint": {
-    "prefix": "pprint",
+    "prefix": [
+      "pp",
+      "pprint"
+    ],
     "description": "pprint f(x)",
-    "body": [ "pprint(${1:variable})" ]
+    "body": [
+      "pprint(${1:variable})"
+    ]
   },
   "printlev": {
     "prefix": "printlev",
     "description": "printlev f(x)",
-    "body": [ "printlev(${1})" ]
+    "body": [
+      "printlev(${1})"
+    ]
   },
   "printstruct": {
-    "prefix": "printstruct",
+    "prefix": [
+      "ps",
+      "printstruct"
+    ],
     "description": "printstruct(myTable)",
-    "body": [ "printstruct(${1:table})" ]
+    "body": [
+      "printstruct(${1:table})"
+    ]
   }
 }
