@@ -2,7 +2,10 @@
   "name": "personal-snippets",
   "contributes": {
     "snippets": [
-      { "language": "skill", "path": "./skill.json" }
+      {
+        "language": "skill",
+        "path": "./skill.json"
+      }
     ]
   }
 }
