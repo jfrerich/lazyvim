@@ -8,6 +8,7 @@ local wk = require("which-key")
 wk.add({
   { "<leader>v", "<cmd>vsplit<cr>", desc = "Vertical Split", mode = "n" },
   { "<leader>h", "<cmd>split<cr>", desc = "Horizonal Split", mode = "n" },
+  { "<leader>y", "<cmd>YankyRingHistory<cr>", desc = "Yanky History", mode = "n" },
   -- hide default keymaps from which-key
   { "<leader>|", hidden = true },
   { "<leader>-", hidden = true },
@@ -31,5 +32,6 @@ map({ "n", "x" }, "P", "<Plug>(YankyPutBefore)")
 map({ "n", "x" }, "gp", "<Plug>(YankyGPutAfter)")
 map({ "n", "x" }, "gP", "<Plug>(YankyGPutBefore)")
 
+-- after putting, use these to iterate through the saved yanked texts
 map("n", "<c-p>", "<Plug>(YankyPreviousEntry)")
 map("n", "<c-n>", "<Plug>(YankyNextEntry)")
