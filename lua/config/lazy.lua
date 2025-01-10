@@ -48,6 +48,3 @@ require("lazy").setup({
     },
   },
 })
-
--- vim.g.trouble_lualine = false
-vim.cmd([[ hi IlluminatedWordRead gui=underline ]])
